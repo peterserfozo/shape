@@ -22,3 +22,11 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Service\Routing\ShapeLoader:
+        public: true
+        
+    app.shape.routing_loader:
+        class: App\Service\Routing\ShapeLoader
+        tags:
+            - { name: routing.loader }
