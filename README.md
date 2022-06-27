@@ -1,6 +1,4 @@
-# Horus Music test
-
-Horus Music application.
+# Shape
 
 ## Getting Started
 1. Run `docker-compose build --pull --no-cache` to build fresh images
