@@ -20,15 +20,15 @@ class ShapeControllerTest extends ApiTestCase
 
     public function testValidTriangleRequest(): void
     {
-        static::createClient()->request('GET', '/triangle/3/4/5');
+        static::createClient()->request('GET', '/triangle/3/4.89/5');
         $this->assertResponseIsSuccessful();
         $this->assertJsonEquals([
             'type' => 'triangle',
             'a' => '3.000000',
-            'b' => '4.000000',
+            'b' => '4.890000',
             'c' => '5.000000',
-            'surface' => '36.000000',
-            'circumference' => '12.000000',
+            'surface' => '49.889642',
+            'circumference' => '12.890000',
         ]);
     }
 
