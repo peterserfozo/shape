@@ -1,5 +1,9 @@
 # Shape
 
+An easily extensible app.
+
+It is enough to add a new Shape model class, then routing, request and response handling are working without modification.
+
 ## Getting Started
 1. Run `docker-compose build --pull --no-cache` to build fresh images
 2. Run `docker-compose up` (the logs will be displayed in the current shell)
