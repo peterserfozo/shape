@@ -30,3 +30,8 @@ services:
         class: App\Service\Routing\ShapeLoader
         tags:
             - { name: routing.loader }
+            
+    App\Service\GeometryCalculator:
+        public: true
+        class: App\Service\GeometryCalculator
+        arguments: []

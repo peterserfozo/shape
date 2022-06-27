@@ -46,7 +46,7 @@ class ShapeLoader implements LoaderInterface
      * @return object[]
      *   Array of instantiated shapes.
      */
-    protected function loadShapes(string $namespace = 'App\Model\Shape', string $search_root_path = __DIR__ . '/../../Model/Shape'): array
+    public function loadShapes(string $namespace = 'App\Model\Shape', string $search_root_path = __DIR__ . '/../../Model/Shape'): array
     {
         $finder = new Finder();
         $finder->files()->in($search_root_path)->name('*.php');
@@ -73,7 +73,7 @@ class ShapeLoader implements LoaderInterface
      * @return string
      *   The route's name.
      */
-    protected function buildRouteName(ShapeRouteRegisterInterface $shape): string {
+    public function buildRouteName(ShapeRouteRegisterInterface $shape): string {
         return strtolower((new \ReflectionClass($shape))->getShortName());
     }
 
@@ -86,7 +86,7 @@ class ShapeLoader implements LoaderInterface
      * @return string
      *   The route's path.
      */
-    protected function buildPath(ShapeRouteRegisterInterface $shape): string {
+    public function buildPath(ShapeRouteRegisterInterface $shape): string {
         $params = $shape->getInputParams();
         array_walk($params, function(&$item) {
             $item = '{' . $item . '<' . self::REQUIREMENT_FLOAT . '>}';
